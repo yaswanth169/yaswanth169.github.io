@@ -2,8 +2,10 @@
   "$schema": "node_modules/wrangler/config-schema.json",
 
   // Static-asset Worker: no server code, Cloudflare just serves src/.
-  // "name" must match the Cloudflare project name exactly.
-  "name": "yaswanth169-github-io",
+  // "name" must match the Cloudflare project name exactly. It deliberately
+  // avoids the string "github-io": Chrome flags *-github-io.workers.dev as a
+  // lookalike of github.io and shows a phishing interstitial.
+  "name": "yashwanth-devavarapu",
   "compatibility_date": "2026-10-01",
 
   "workers_dev": true,
