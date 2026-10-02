@@ -1,28 +1,53 @@
-# Yashwanth Devavarapu : academic site
+# Yashwanth Devavarapu: academic site
 
-Static site. No build step, no dependencies: plain HTML, one CSS file, one small JS file.
+Static site. No build step and no dependencies: plain HTML, one stylesheet, one small
+script. Everything that gets published lives in `src/`.
 
-## Pages
+```
+.
+├─ src/                     everything served to the web
+│  ├─ index.html            about / home
+│  ├─ research.html         research themes
+│  ├─ publications.html     full publication list, grouped by status
+│  ├─ projects.html         engineering projects
+│  ├─ cv.html               curriculum vitae
+│  ├─ assets/
+│  │  ├─ css/style.css      all styling, including the light/dark tokens
+│  │  ├─ js/theme.js        light/dark toggle
+│  │  └─ img/profile.jpeg   sidebar photo
+│  ├─ files/                downloadable CV
+│  └─ .nojekyll             publish files as-is, no Jekyll pass
+├─ .github/workflows/deploy.yml
+└─ README.md
+```
 
-| File | Page |
-|---|---|
-| `index.html` | About / home |
-| `research.html` | Research themes and narrative |
-| `publications.html` | Full publication list, grouped by status |
-| `projects.html` | Engineering projects |
-| `cv.html` | Curriculum vitae |
+## Deploying
 
-## Assets
+`.github/workflows/deploy.yml` publishes `src/` to GitHub Pages on every push to `main`.
+Nothing is built; the directory is uploaded as-is.
 
-- `assets/css/style.css` : all styling, including the light/dark theme tokens
-- `assets/js/theme.js` : light/dark toggle (the ☾/☀ button in the nav)
-- `assets/img/profile.jpeg` : sidebar photo
-- `files/Yashwanth_Devavarapu_CV.pdf` : downloadable CV
+This requires **Settings → Pages → Source: "GitHub Actions"**. With the older "Deploy from
+a branch" setting the site will 404, because the HTML no longer sits at the repository
+root.
+
+## Working on it
+
+Changes go through a branch and a pull request, never straight to `main`:
+
+```sh
+git checkout -b feat/whatever
+# edit, then:
+python3 -m http.server -d src     # preview at http://localhost:8000
+git commit -am "Describe the change"
+git push -u origin feat/whatever
+```
+
+Open the pull request, check it, merge. Merging to `main` deploys.
 
 ## Editing
 
-Each page is self-contained HTML. The header, sidebar and footer are repeated in all five
-files, so a change to the sidebar (a new link, a new affiliation) needs the same edit in
+Each page is self-contained HTML. The header, sidebar and footer are repeated across all
+five files, so a sidebar change (a new link, a new affiliation) needs the same edit in
 each. Everything else is page-local.
 
 Publication entries follow one shape:
@@ -37,23 +62,12 @@ Publication entries follow one shape:
 </div>
 ```
 
-Anchors are linked from `research.html` and `index.html`, so keep the `id` if you move an
-entry.
+`research.html` and `index.html` link to these anchors, so keep the `id` if an entry moves.
 
-## Deploying to GitHub Pages
+## Design
 
-```sh
-git init
-git add .
-git commit -m "Add academic site"
-git branch -M main
-git remote add origin https://github.com/yaswanth169/yaswanth169.github.io.git
-git push -u origin main
-```
-
-Then in the repo: **Settings → Pages → Source: Deploy from a branch → `main` / `(root)`**.
-
-The site serves at `https://yaswanth169.github.io/`. `.nojekyll` is present so GitHub
-publishes the files as-is instead of running them through Jekyll.
-
-To preview locally: `python3 -m http.server` then open http://localhost:8000.
+Typefaces are Source Serif 4 for headings and Inter for body text, both from Google Fonts.
+Colours are CSS custom properties on `:root`, redefined under `:root[data-theme="dark"]`.
+Light is the default; dark is opt-in via the toggle and remembered per visitor. The
+masthead is sticky with a frosted backdrop blur, applied only where the browser supports
+`backdrop-filter` so the nav is never unreadable.

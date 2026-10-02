@@ -3,14 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Projects &middot; Yashwanth Devavarapu</title>
-<meta name="description" content="Backend, real-time and retrieval-augmented engineering projects built by Yashwanth Devavarapu.">
+<title>Yashwanth Devavarapu</title>
+<meta name="description" content="Software Engineer at Barclays researching benchmarking and evaluation of multimodal models, agentic AI systems, and representation learning.">
 <meta name="author" content="Yashwanth Devavarapu">
-<meta property="og:title" content="Projects &middot; Yashwanth Devavarapu">
-<meta property="og:description" content="Backend, real-time and retrieval-augmented engineering projects built by Yashwanth Devavarapu.">
+<meta property="og:title" content="Yashwanth Devavarapu">
+<meta property="og:description" content="Software Engineer at Barclays researching benchmarking and evaluation of multimodal models, agentic AI systems, and representation learning.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/img/profile.jpeg">
 <link rel="icon" href="assets/img/profile.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;display=swap">
 <link rel="stylesheet" href="assets/css/style.css">
 <script>
   try {
@@ -29,7 +32,7 @@
       <nav class="nav" aria-label="Main">
           <a href="research.html">Research</a>
           <a href="publications.html">Publications</a>
-          <a href="projects.html" aria-current="page">Projects</a>
+          <a href="projects.html">Projects</a>
           <a href="cv.html">CV</a>
         <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme">
           <svg class="icon-moon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278z"/></svg>
@@ -61,62 +64,96 @@
       </aside>
     <main class="content" id="main">
 
-<h1>Projects</h1>
+<h1>Software engineer at Barclays, researching how multimodal and agentic AI
+systems are actually evaluated</h1>
 
-<p class="lead">Engineering projects built outside my research work: mostly
-backend systems, real-time infrastructure and retrieval-augmented applications.</p>
+<p class="lead">I build production AI and developer-platform systems at Barclays in
+Pune, India, and run a parallel research programme on evaluation: benchmarks that
+surface failure modes current models hide, and agentic pipelines for scientific
+domains where the hard part is the sequence of expert <em>decisions</em>, not the
+computation.</p>
 
-<div class="entry">
-  <div class="entry__head">
-    <h3 class="entry__title">ChatQuill: real-time chat application</h3>
-  </div>
-  <p class="entry__sub">WebSockets &middot; backend development</p>
-  <p>Real-time chat with WebSocket-based bidirectional communication, reducing latency by
-  50%. Implemented the STOMP protocol for message broadcasting and user presence
-  tracking.</p>
-  <p class="stack"><strong>Stack:</strong> Spring Boot, Thymeleaf, WebSockets, HTML, CSS</p>
-</div>
+<p>Most benchmarks reward models for what they already do well. The work I find
+interesting goes the other way: construct the evaluation that breaks the model, then
+explain why it broke. That thread runs through a mirror-reasoning benchmark on which
+frontier vision-language models score 42&ndash;44% against 94% for humans, a 23-task
+video embedding benchmark where no single model dominates any task family, and a study
+showing that large language models cannot reliably execute a decision-analysis problem
+taught to undergraduates.</p>
 
-<div class="entry">
-  <div class="entry__head">
-    <h3 class="entry__title">Daily Expenses Sharing Application</h3>
-  </div>
-  <p class="entry__sub">Expense management &middot; backend development</p>
-  <p>Backend system handling daily expense splitting using equal, exact and
-  percentage-based methods, with REST APIs for user authentication, transaction records
-  and balance tracking.</p>
-  <p class="stack"><strong>Stack:</strong> Spring Boot, MySQL, JPA, Lombok</p>
-</div>
+<p>Alongside that, I work on agentic systems for scientific instruments (cryo-EM and cryo-ET reconstruction pipelines that run end to end without human
+checkpoints) and on representation learning for Kinyarwanda, a Bantu language
+spoken by over 12 million people and largely absent from multilingual pre-training
+corpora.</p>
 
-<div class="entry">
-  <div class="entry__head">
-    <h3 class="entry__title">Cure Connect: healthcare web app</h3>
-  </div>
-  <p class="entry__sub">Web development &middot; healthcare</p>
-  <p>Online healthcare appointment booking system with user authentication and secure
-  patient data management, backed by MongoDB for storage and efficient retrieval.</p>
-  <p class="stack"><strong>Stack:</strong> Django, MongoDB, HTML, CSS</p>
-</div>
+<h2>Research focus</h2>
 
-<div class="entry">
-  <div class="entry__head">
-    <h3 class="entry__title">Gen AI chatbot with SQL database</h3>
-  </div>
-  <p class="entry__sub">LangChain &middot; SQL integration</p>
-  <p>Chatbot that queries SQL databases to fetch and summarise data dynamically,
-  supporting real-time decision-making.</p>
-  <p class="stack"><strong>Stack:</strong> LangChain SQL Toolkit, PostgreSQL, OpenAI API</p>
-</div>
+<ul>
+  <li><strong><a href="research.html#benchmarking">Benchmarking &amp; evaluation of
+    multimodal models</a></strong>: diagnostic benchmarks for vision-language
+    models, video embeddings, and small language models under deployment constraints.</li>
+  <li><strong><a href="research.html#agentic">Agentic AI &amp; autonomous
+    systems</a></strong>: LLM-driven operators for scientific pipelines,
+    verifiable RL environments for software engineering agents, and training-free
+    anomaly detection via symbolic world models.</li>
+  <li><strong><a href="research.html#imaging">Medical &amp; scientific
+    imaging</a></strong>: diffusion models for conditional MRI generation,
+    cryo-EM and cryo-ET reconstruction, and medical question answering at the edge.</li>
+  <li><strong><a href="research.html#lowresource">Low-resource language
+    representation</a></strong>: sentence embeddings and tabular pre-training
+    for Kinyarwanda.</li>
+  <li><strong><a href="research.html#security">Network security &amp; intrusion
+    detection</a></strong>: machine learning for SDN intrusion detection and
+    financial fraud anomaly detection.</li>
+</ul>
 
-<div class="entry">
-  <div class="entry__head">
-    <h3 class="entry__title">Chatbot that chats with PDFs</h3>
-  </div>
-  <p class="entry__sub">RAG &middot; document AI</p>
-  <p>AI-powered PDF interaction allowing users to query documents and receive
-  context-aware responses while maintaining chat history.</p>
-  <p class="stack"><strong>Stack:</strong> LangChain, AstraDB, ChromaDB, OpenAI API</p>
-</div>
+<h2>Selected work</h2>
+
+<h3><a href="publications.html#looking-glass">Through the Looking Glass</a>
+  <span class="tag">CVPR Workshop 2026</span></h3>
+<p>When a clock reads 2:50 in a mirror, humans instantly infer 9:10. Vision-language
+models report &ldquo;2:50.&rdquo; We name this <em>reflection blindness</em> and build
+the first benchmark to diagnose it: 713 real-world images, 3,529 QA pairs, 10 scenario
+categories. Across 11 models, accuracy sits at 39&ndash;48% against 94% for humans. GPT&#8209;5.2, Gemini&nbsp;2.5&nbsp;Flash and Claude&nbsp;4.5&nbsp;Sonnet all
+cluster at 42&ndash;44%. Multi-turn dialogue makes most models <em>worse</em>.</p>
+
+<h3><a href="publications.html#mveb">MVEB: Massive Video Embedding Benchmark</a>
+  <span class="tag">arXiv 2026</span></h3>
+<p>A 23-task benchmark for video embeddings spanning classification, clustering,
+retrieval and video-centric QA, distilled from a 184-task pool. Across 33 models no
+single approach dominates, and audio's contribution turns out to depend on how the
+labels were annotated, a six-point gap consistent across model families.
+Integrated into the MTEB ecosystem.</p>
+
+<h3><a href="publications.html#cryoemagent">CryoEMAgent</a>
+  <span class="tag">In progress</span></h3>
+<p>An LLM-driven autonomous operator that runs a complete cryo-EM single-particle
+analysis pipeline in CryoSPARC over an MCP-over-SSH bridge, with no human checkpoints.
+It reconstructs a 3.21&#8201;&#197; near-atomic structure of a G-protein-coupled receptor
+from the full EMPIAR&#8209;10288 dataset (2,756 movies, 477&#8239;GB) with zero
+human intervention.</p>
+
+<h3><a href="publications.html#kinyaembed">KinyaEmbed</a>
+  <span class="tag">arXiv 2026</span></h3>
+<p>The first dedicated sentence embedding model for Kinyarwanda, trained through a
+four-stage curriculum. It reaches Spearman &rho;&nbsp;=&nbsp;0.7298 on SemRel2024&#8209;rw,
+surpassing mE5&#8209;large by 20.9% and OpenAI text&#8209;embedding&#8209;3&#8209;large by
+41.0%.</p>
+
+<h2>News</h2>
+
+<ul>
+  <li><strong>2026</strong>: &ldquo;Through the Looking Glass&rdquo; accepted at
+    a CVPR 2026 workshop.</li>
+  <li><strong>2026</strong>: Selected as Technical Committee Member for
+    IEM&#8209;HEALS 2026, the International Conference on Advancing Science and
+    Technologies in Health Science.</li>
+  <li><strong>2026</strong>: MVEB, TabuLM and KinyaEmbed released on arXiv.</li>
+  <li><strong>2026</strong>: Finalist at the Meta PyTorch OpenEnv Hackathon:
+    top 100 teams nationwide from 31,000+ registrations.</li>
+  <li><strong>Jul 2025</strong>: Joined Barclays, Pune as a Software
+    Engineer.</li>
+</ul>
 
     </main>
   </div>
