@@ -12,6 +12,10 @@
   "preview_urls": true,
   "observability": { "enabled": true },
 
+  // Required by `npx wrangler preview`, the preview-build command. It may be
+  // empty: assets and compatibility settings stay at the top level.
+  "previews": {},
+
   "assets": {
     "directory": "./src",
 
