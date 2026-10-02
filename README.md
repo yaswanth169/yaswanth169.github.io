@@ -1,4 +1,4 @@
-# Yashwanth Devavarapu — academic site
+# Yashwanth Devavarapu : academic site
 
 Static site. No build step, no dependencies: plain HTML, one CSS file, one small JS file.
 
@@ -14,10 +14,10 @@ Static site. No build step, no dependencies: plain HTML, one CSS file, one small
 
 ## Assets
 
-- `assets/css/style.css` — all styling, including the light/dark theme tokens
-- `assets/js/theme.js` — light/dark toggle (the ☾/☀ button in the nav)
-- `assets/img/profile.jpeg` — sidebar photo
-- `files/Yashwanth_Devavarapu_CV.pdf` — downloadable CV
+- `assets/css/style.css` : all styling, including the light/dark theme tokens
+- `assets/js/theme.js` : light/dark toggle (the ☾/☀ button in the nav)
+- `assets/img/profile.jpeg` : sidebar photo
+- `files/Yashwanth_Devavarapu_CV.pdf` : downloadable CV
 
 ## Editing
 

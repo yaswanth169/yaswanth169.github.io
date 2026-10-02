@@ -81,9 +81,9 @@ models fail on it.</p>
 <a href="publications.html#looking-glass">Through the Looking Glass</a> we show that
 vision-language models systematically hallucinate the canonical orientation of mirrored
 content rather than reasoning about the reflection. The benchmark covers 713 real-world
-images and 3,529 QA pairs across 10 scenario categories &mdash; licence plates in
+images and 3,529 QA pairs across 10 scenario categories (licence plates in
 rear-view mirrors, analog clocks, hands, ears, shoes, chemical formulas, ambulance
-mirror-text, selfie cameras, water reflections, indoor mirrors &mdash; organised into
+mirror-text, selfie cameras, water reflections, indoor mirrors) organised into
 five question types. All 11 evaluated models land at 39&ndash;48% against 94% for
 humans, and performance collapses hardest on mental un-flipping of text and left&ndash;right
 chirality judgment. Multi-turn dialogue degrades most models by 1&ndash;14 points.</p>
@@ -94,7 +94,7 @@ while cutting evaluation cost. Evaluating 33 models shows no single winner: MLLM
 embeddings lead on classification, clustering, pair classification and QA; multimodal
 binding leads on retrieval and zero-shot classification; generative MLLMs without
 contrastive adaptation collapse on cross-modal tasks. A paired video-only versus
-audio+video evaluation isolates a provenance effect &mdash; audio helps when labels were
+audio+video evaluation isolates a provenance effect: audio helps when labels were
 produced from both modalities and hurts when they came from visuals alone.</p>
 
 <p><strong>Reasoning under known ground truth.</strong>
@@ -136,8 +136,7 @@ false positives on a PhysAD sample.</p>
 
 <p><a href="publications.html#trace">TRACE</a> and
 <a href="publications.html#apishift">APISHIFT</a> build verifiable reinforcement learning
-environments for network troubleshooting agents and API contract migration &mdash;
-settings where an agent's action can be checked against ground truth rather than scored
+environments for network troubleshooting agents and API contract migration: settings where an agent's action can be checked against ground truth rather than scored
 by a model.</p>
 
 <p><a href="publications.html#scene-rep">Scene Representations for Robotics</a> surveys
@@ -147,13 +146,13 @@ NeRF to 4D semantic Gaussian splatting.</p>
 
 <h2 id="imaging">Medical &amp; scientific imaging</h2>
 
-<p><strong>Conditional MRI generation</strong> &mdash; my main ongoing project, an
+<p><strong>Conditional MRI generation</strong>: my main ongoing project, an
 unpaired diffusion model for conditional generation of MRI scans from segmentation maps,
 in collaboration with <strong>Harvard Medical School</strong>. Expected duration one
 year.</p>
 
 <p><a href="publications.html#cryo-agent">CRYO-AGENT</a> addresses the two fundamental
-limits of cryo-electron tomography &mdash; low signal-to-noise ratio and the missing
+limits of cryo-electron tomography: low signal-to-noise ratio and the missing
 wedge artifact, which induces anisotropic distortions and structural hallucinations that
 feed-forward denoisers never validate. It reframes 3D reconstruction as an autonomous
 scientific discovery loop: a Planner&ndash;Executor&ndash;Critic workflow where the
@@ -180,8 +179,7 @@ Kinyarwanda STS benchmark.</p>
 
 <p><a href="publications.html#tabulm">TabuLM</a> is the first language model pre-trained
 on Kinyarwanda tabular data, extending KinyaBERT&#8209;large with row, column and
-cell-type embeddings and a learned table-structure attention bias. Two new objectives
-&mdash; Masked Cell Recovery and Column Type Prediction &mdash; are pre-trained on 172
+cell-type embeddings and a learned table-structure attention bias. Two new objectives, Masked Cell Recovery and Column Type Prediction, are pre-trained on 172
 Rwandan government tables from NISR, RAB, REB and MoH open-data portals. It ships with
 TabQA&#8209;kin, the first native Kinyarwanda table question-answering benchmark.</p>
 
@@ -194,7 +192,7 @@ control-plane exhaustion.</p>
 <p><a href="publications.html#sdn-ddos">ML-Based SDN DDoS Detection</a> compares Random
 Forest, XGBoost, artificial neural networks and decision trees on CICIDS&#8209;2017,
 detecting brute force, DoS, DDoS, probe and user-to-root attacks using only features
-already available at the controller &mdash; no deep packet inspection.</p>
+already available at the controller, with no deep packet inspection.</p>
 
 <p><a href="publications.html#adaptive-ids">Adaptive Semi-Supervised Intrusion
 Detection</a> targets the gap left by fully supervised, binary-class IDS work: limited
