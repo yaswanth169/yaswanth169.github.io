@@ -17,6 +17,12 @@
   --chip-bg:       #f4f6f7;
   --chip-text:     #5d6469;
   --accent:        #2b7bb9;
+  --masthead-bg:   rgba(255, 255, 255, .72);
+
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, sans-serif;
+  --font-head: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --masthead-h: 57px;
 }
 
 /* Light is the default. Dark applies only when the visitor toggles it. */
@@ -34,18 +40,21 @@
   --chip-bg:     #23282b;
   --chip-text:   #a7aeb3;
   --accent:      #6fb7e3;
+  --masthead-bg: rgba(25, 28, 30, .72);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--masthead-h) + 1.25rem);
+}
 
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-               "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -70,8 +79,21 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 /* ----------------------------- masthead ----------------------------- */
 
 .masthead {
+  position: sticky;
+  top: 0;
+  z-index: 50;
   border-bottom: 1px solid var(--rule);
   background: var(--bg);
+}
+
+/* Frosted glass only where the browser can actually blur; elsewhere the
+   solid background above stays, so the nav is never unreadable. */
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .masthead {
+    background: var(--masthead-bg);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    backdrop-filter: saturate(180%) blur(14px);
+  }
 }
 
 .masthead__inner {
@@ -83,7 +105,8 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 }
 
 .site-title {
-  font-size: 1.0625rem;
+  font-family: var(--font-head);
+  font-size: 1.125rem;
   font-weight: 700;
   color: var(--heading);
   padding: 1rem 0 .55rem;
@@ -140,7 +163,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 
 /* ------------------------------ sidebar ----------------------------- */
 
-.sidebar { position: sticky; top: 1.5rem; }
+.sidebar { position: sticky; top: calc(var(--masthead-h) + 1.5rem); }
 
 .avatar {
   width: 140px; height: 140px;
@@ -152,7 +175,8 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 }
 
 .author__name {
-  font-size: 1.0625rem;
+  font-family: var(--font-head);
+  font-size: 1.125rem;
   font-weight: 700;
   letter-spacing: -.01em;
   color: var(--heading);
@@ -194,6 +218,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 body { overflow-x: hidden; }
 
 .content h1 {
+  font-family: var(--font-head);
   font-size: 1.875rem;
   line-height: 1.25;
   font-weight: 700;
@@ -202,6 +227,7 @@ body { overflow-x: hidden; }
 }
 
 .content h2 {
+  font-family: var(--font-head);
   font-size: 1.3125rem;
   font-weight: 700;
   color: var(--heading);
@@ -211,6 +237,7 @@ body { overflow-x: hidden; }
 }
 
 .content h3 {
+  font-family: var(--font-head);
   font-size: 1.0625rem;
   font-weight: 700;
   color: var(--heading);
@@ -231,6 +258,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
 .pub-group { margin-bottom: 1.75rem; }
 
 .pub {
+  scroll-margin-top: calc(var(--masthead-h) + 1rem);
   padding: .95rem 0;
   border-bottom: 1px solid var(--rule);
 }
@@ -238,7 +266,8 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
 .pub:last-child { border-bottom: 0; }
 
 .pub__title {
-  font-size: 1rem;
+  font-family: var(--font-head);
+  font-size: 1.0625rem;
   font-weight: 700;
   color: var(--heading);
   margin: 0 0 .3rem;
@@ -312,7 +341,7 @@ details.abstract p {
   flex-wrap: wrap;
 }
 
-.entry__title { font-size: 1rem; font-weight: 700; color: var(--heading); margin: 0; }
+.entry__title { font-family: var(--font-head); font-size: 1.0625rem; font-weight: 700; color: var(--heading); margin: 0; }
 .entry__date { font-size: .8125rem; color: var(--muted); white-space: nowrap; }
 .entry__sub { font-size: .875rem; color: var(--muted); margin: .15rem 0 .55rem; }
 .entry ul { margin: .5rem 0 0; }
@@ -348,6 +377,7 @@ details.abstract p {
   }
   .author__meta li { margin-bottom: 0; }
   .content h1 { font-size: 1.625rem; }
+  .masthead { position: static; }
   .masthead__inner { min-height: 0; padding-bottom: .5rem; }
   .site-title { margin-right: 0; width: 100%; border-bottom: 0; padding-bottom: 0; }
   .nav { flex-wrap: wrap; gap: 1.1rem; }
