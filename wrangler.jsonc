@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+
+  // Static-asset Worker: no server code, Cloudflare just serves src/.
+  // "name" must match the Cloudflare project name exactly.
+  "name": "yaswanth169-github-io",
+  "compatibility_date": "2026-10-01",
+
+  "workers_dev": true,
+  "preview_urls": true,
+  "observability": { "enabled": true },
+
+  "assets": {
+    "directory": "./src",
+
+    // Serve /publications.html as-is. The default, "auto-trailing-slash",
+    // 307-redirects it to /publications, and every internal link in the
+    // site is written with the .html extension.
+    "html_handling": "none",
+
+    "not_found_handling": "404-page"
+  }
+}
