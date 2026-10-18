@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Projects &middot; Yashwanth Devavarapu</title>
-<meta name="description" content="Backend, real-time and retrieval-augmented engineering projects built by Yashwanth Devavarapu.">
+<meta name="description" content="A C++ limit order book and matching engine, a Python/C++ statistical backtesting framework, and RAG document QA and text-to-SQL agents.">
 <meta name="author" content="Yashwanth Devavarapu">
-<meta property="og:title" content="Projects &middot; Yashwanth Devavarapu">
-<meta property="og:description" content="Backend, real-time and retrieval-augmented engineering projects built by Yashwanth Devavarapu.">
+<meta property="og:title" content="Projects">
+<meta property="og:description" content="A C++ limit order book and matching engine, a Python/C++ statistical backtesting framework, and RAG document QA and text-to-SQL agents.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/img/profile.jpeg">
 <link rel="icon" href="assets/img/profile.jpeg">
@@ -49,8 +49,8 @@
         <img class="avatar" src="assets/img/profile.jpeg"
              alt="Yashwanth Devavarapu" width="140" height="140">
         <h2 class="author__name">Yashwanth Devavarapu</h2>
-        <p class="author__bio">Software Engineer at Barclays. Research on benchmarking and
-          evaluation of multimodal models, agentic AI systems, and representation learning.</p>
+        <p class="author__bio">Software Engineer at Barclays. Research collaborator with
+          Stanford, Harvard Medical School / MGH and Carnegie Mellon.</p>
         <ul class="author__meta">
           <li><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0a5 5 0 0 0-5 5c0 3.5 5 11 5 11s5-7.5 5-11a5 5 0 0 0-5-5zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg><span>Pune, India</span></li>
           <li><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 1 1 5v1h14V5L8 1zM3 7v5H2v2h12v-2h-1V7h-2v5H9V7H7v5H5V7H3z"/></svg><span>Barclays</span></li>
@@ -63,64 +63,47 @@
         </ul>
       </aside>
     <main class="content" id="main">
-
 <h1>Projects</h1>
 
-<p class="lead">Engineering projects built outside my research work: mostly
-backend systems, real-time infrastructure and retrieval-augmented applications.</p>
+<p class="lead">Systems work outside the research collaborations: low-latency execution,
+quantitative tooling, and retrieval-augmented agents.</p>
 
 <div class="entry">
   <div class="entry__head">
-    <h3 class="entry__title">ChatQuill: real-time chat application</h3>
+    <h3 class="entry__title">C++ limit order book and matching engine</h3>
+    <span class="entry__date">~3M orders/sec</span>
   </div>
-  <p class="entry__sub">WebSockets &middot; backend development</p>
-  <p>Real-time chat with WebSocket-based bidirectional communication, reducing latency by
-  50%. Implemented the STOMP protocol for message broadcasting and user presence
-  tracking.</p>
-  <p class="stack"><strong>Stack:</strong> Spring Boot, Thymeleaf, WebSockets, HTML, CSS</p>
+  <p class="entry__sub">Low-latency systems &middot; market microstructure</p>
+  <p>A limit order book and matching engine in C++ sustaining roughly three million
+  orders per second. The data structures underneath it are the subject of
+  <a href="publications.html#orderbook">a reproducible, cross-platform study</a>
+  comparing their behaviour across implementations and hardware.</p>
+  <p class="stack"><strong>Stack:</strong> C++, lock-free data structures, cross-platform
+  benchmarking</p>
 </div>
 
 <div class="entry">
   <div class="entry__head">
-    <h3 class="entry__title">Daily Expenses Sharing Application</h3>
+    <h3 class="entry__title">Statistical backtesting framework</h3>
   </div>
-  <p class="entry__sub">Expense management &middot; backend development</p>
-  <p>Backend system handling daily expense splitting using equal, exact and
-  percentage-based methods, with REST APIs for user authentication, transaction records
-  and balance tracking.</p>
-  <p class="stack"><strong>Stack:</strong> Spring Boot, MySQL, JPA, Lombok</p>
+  <p class="entry__sub">Quantitative research tooling</p>
+  <p>A backtesting framework in Python and C++ for evaluating trading strategies against
+  historical data, with the performance-critical paths in C++ and the research interface
+  in Python.</p>
+  <p class="stack"><strong>Stack:</strong> Python, C++</p>
 </div>
 
 <div class="entry">
   <div class="entry__head">
-    <h3 class="entry__title">Cure Connect: healthcare web app</h3>
+    <h3 class="entry__title">RAG document QA and text-to-SQL agents</h3>
   </div>
-  <p class="entry__sub">Web development &middot; healthcare</p>
-  <p>Online healthcare appointment booking system with user authentication and secure
-  patient data management, backed by MongoDB for storage and efficient retrieval.</p>
-  <p class="stack"><strong>Stack:</strong> Django, MongoDB, HTML, CSS</p>
+  <p class="entry__sub">Retrieval-augmented generation &middot; agent tooling</p>
+  <p>Retrieval-augmented question answering over document collections, and agents that
+  translate natural-language questions into SQL, query the database and summarise what
+  comes back.</p>
+  <p class="stack"><strong>Stack:</strong> Python, LangChain, vector databases,
+  PostgreSQL</p>
 </div>
-
-<div class="entry">
-  <div class="entry__head">
-    <h3 class="entry__title">Gen AI chatbot with SQL database</h3>
-  </div>
-  <p class="entry__sub">LangChain &middot; SQL integration</p>
-  <p>Chatbot that queries SQL databases to fetch and summarise data dynamically,
-  supporting real-time decision-making.</p>
-  <p class="stack"><strong>Stack:</strong> LangChain SQL Toolkit, PostgreSQL, OpenAI API</p>
-</div>
-
-<div class="entry">
-  <div class="entry__head">
-    <h3 class="entry__title">Chatbot that chats with PDFs</h3>
-  </div>
-  <p class="entry__sub">RAG &middot; document AI</p>
-  <p>AI-powered PDF interaction allowing users to query documents and receive
-  context-aware responses while maintaining chat history.</p>
-  <p class="stack"><strong>Stack:</strong> LangChain, AstraDB, ChromaDB, OpenAI API</p>
-</div>
-
     </main>
   </div>
 </div>

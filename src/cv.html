@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CV &middot; Yashwanth Devavarapu</title>
-<meta name="description" content="Curriculum vitae of Yashwanth Devavarapu: education, experience at Barclays, skills, publications, certifications and academic service.">
+<meta name="description" content="Curriculum vitae of Yashwanth Devavarapu: research at Stanford, Harvard Medical School/MGH and Carnegie Mellon, engineering at Barclays, skills, service and recognitions.">
 <meta name="author" content="Yashwanth Devavarapu">
-<meta property="og:title" content="CV &middot; Yashwanth Devavarapu">
-<meta property="og:description" content="Curriculum vitae of Yashwanth Devavarapu: education, experience at Barclays, skills, publications, certifications and academic service.">
+<meta property="og:title" content="CV">
+<meta property="og:description" content="Curriculum vitae of Yashwanth Devavarapu: research at Stanford, Harvard Medical School/MGH and Carnegie Mellon, engineering at Barclays, skills, service and recognitions.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/img/profile.jpeg">
 <link rel="icon" href="assets/img/profile.jpeg">
@@ -49,8 +49,8 @@
         <img class="avatar" src="assets/img/profile.jpeg"
              alt="Yashwanth Devavarapu" width="140" height="140">
         <h2 class="author__name">Yashwanth Devavarapu</h2>
-        <p class="author__bio">Software Engineer at Barclays. Research on benchmarking and
-          evaluation of multimodal models, agentic AI systems, and representation learning.</p>
+        <p class="author__bio">Software Engineer at Barclays. Research collaborator with
+          Stanford, Harvard Medical School / MGH and Carnegie Mellon.</p>
         <ul class="author__meta">
           <li><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0a5 5 0 0 0-5 5c0 3.5 5 11 5 11s5-7.5 5-11a5 5 0 0 0-5-5zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg><span>Pune, India</span></li>
           <li><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 1 1 5v1h14V5L8 1zM3 7v5H2v2h12v-2h-1V7h-2v5H9V7H7v5H5V7H3z"/></svg><span>Barclays</span></li>
@@ -63,7 +63,6 @@
         </ul>
       </aside>
     <main class="content" id="main">
-
 <h1>Curriculum Vitae</h1>
 
 <p class="lead"><a href="files/Yashwanth_Devavarapu_CV.pdf">Download the PDF version
@@ -73,37 +72,113 @@
 
 <div class="entry">
   <div class="entry__head">
-    <h3 class="entry__title">KL University</h3>
+    <h3 class="entry__title">KL University, India</h3>
     <span class="entry__date">Aug 2021 &ndash; May 2025</span>
   </div>
-  <p class="entry__sub">B.Tech in Computer Science and Engineering (Hon's) &middot;
-  CGPA 9.6 / 10</p>
+  <p class="entry__sub">B.Tech in Computer Science and Engineering (Hons.) &middot;
+  CGPA 9.6 / 10 &middot; Top 10 of the graduating class</p>
 </div>
 
-<h2>Experience</h2>
+<h2>Research</h2>
+
+<div class="entry">
+  <div class="entry__head">
+    <h3 class="entry__title">Research Collaborator &middot; Stanford University,
+      Management Science &amp; Engineering</h3>
+    <span class="entry__date">Jun 2026 &ndash; Present</span>
+  </div>
+  <p class="entry__sub">With Prof. Ross Shachter</p>
+  <ul>
+    <li>Designed experiments testing whether LLMs can execute decision analysis, and
+      discovered that response-field order alone changes the answer: $60, $70, $82.35 and
+      $67.50 under answer-first elicitation versus a stable $76.00 under reasoning-first,
+      a measurement artifact that affects how LLM reasoning is evaluated.</li>
+    <li>Built a code-generation setup in which models solved decision problems exactly
+      (128/128) where in-context reasoning failed, and showed that error feedback lifts
+      GPT-4o from 10.2 to 23.0 of 29 tests but never to perfection.</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="entry__head">
+    <h3 class="entry__title">Research Collaborator &middot; Harvard Medical School /
+      Massachusetts General Hospital</h3>
+    <span class="entry__date">Apr 2026 &ndash; Present</span>
+  </div>
+  <p class="entry__sub">With Dr. Xiangrui (Taylor) Zeng</p>
+  <ul>
+    <li>Lead a team generating patient-specific 3D brain MRI volumes without paired data
+      using diffusion models in PyTorch. Set the research direction by hypothesising that
+      gradient guidance would fail where adapter conditioning succeeds, and designed an
+      oracle experiment to test it.</li>
+    <li>Traced residual blur to conditional-mean averaging over plausible anatomies,
+      localised it to high-frequency wavelet subbands, and designed a wavelet-domain loss
+      that improved sharpness; built the ADNI data pipeline and nnUNet-based segmentation
+      evaluation pipeline, generating all second-phase results.</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="entry__head">
+    <h3 class="entry__title">Research Collaborator &middot; Carnegie Mellon University,
+      Prof. Min Xu's Lab</h3>
+    <span class="entry__date">Jan 2026 &ndash; Present</span>
+  </div>
+  <ul>
+    <li><strong>MIRA</strong> (CVPR 2026 workshop, advisor Yunbei Zhang): evaluated 11
+      frontier VLMs on a benchmark of 713 real images and 3,529 question-answer pairs
+      across 10 scenarios, finding they scored 39&ndash;48% against 94% for humans, and
+      that multi-turn dialogue degraded most models.</li>
+    <li><strong>SR-LoRA / CLAC</strong> (ICLR 2027 submission, with Xingjian Li): built
+      and ran the 480-compositions-per-method GPU benchmark on Stable Diffusion v1.5
+      (rank-4 LoRAs, DPM-Solver++, CLIP ViT-L/14) and the &tau;/&alpha;/&delta; and N=3
+      ablations; the ten-seed run showed the text-alignment gain was 4.3%, not the 6.8%
+      seen with three seeds. CLAC raises identity consistency 0.839&rarr;0.915, 7.6
+      points over the strongest baseline.</li>
+    <li><strong>TRACE and APISHIFT</strong>: contributed to verifiable reinforcement
+      learning environments, including environment design, verification logic and reward
+      mechanisms that score agent actions against ground truth rather than relying on a
+      judge model.</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="entry__head">
+    <h3 class="entry__title">Undergraduate Research Assistant &middot; KL University</h3>
+    <span class="entry__date">Aug 2022 &ndash; Mar 2025</span>
+  </div>
+  <p class="entry__sub">With Dr. K. Ashesh</p>
+  <ul>
+    <li>First-authored an IEEE CONIT 2024 paper applying outlier analysis to credit card
+      fraud detection.</li>
+  </ul>
+</div>
+
+<h2>Work experience</h2>
 
 <div class="entry">
   <div class="entry__head">
     <h3 class="entry__title">Software Engineer &middot; Barclays</h3>
     <span class="entry__date">Jul 2025 &ndash; Present</span>
   </div>
-  <p class="entry__sub">Pune, Maharashtra &middot; Java 21, Spring Boot, LangGraph,
-  PostgreSQL, AWS</p>
+  <p class="entry__sub">Pune, India</p>
   <ul>
-    <li>Architected an 8-microservice internal developer platform serving 100+
-      applications, centralising vulnerability management, FinOps, database operations
-      and infrastructure automation, automating security scans, CVE detection,
-      Jira ticket creation and reporting for 50+ engineering teams using MCP tools.</li>
+    <li>Architected and built an 8-microservice platform (Java 21, Spring Boot,
+      PostgreSQL, AWS) centralising vulnerability management, FinOps, database operations
+      and infrastructure automation, adopted by 100+ applications and 50+ engineering
+      teams.</li>
+    <li>Built LangGraph agents with MCP tool integrations that run security scans, detect
+      CVEs, create Jira tickets and generate reports automatically, replacing manual
+      triage across 50+ teams; recognised with the Director's Recognition Award for
+      improving automation reliability and reducing user-prone errors.</li>
+    <li>Built automation covering 15,000+ services and 4,000+ applications for container
+      remediation, vulnerability detection and validation pipelines, cutting remediation
+      time from days to under one hour.</li>
     <li>Designed a hybrid SES&ndash;Keycloak authorisation model with dynamic role
-      provisioning, enabling self-service onboarding for 50+ teams.</li>
-    <li>Developed an AWS FinOps module providing cloud cost analytics, anomaly detection,
-      forecasting and savings recommendations across multiple AWS accounts.</li>
-    <li>Automated GitLab migration and CI/CD onboarding workflows for 100+ repositories,
-      standardising engineering processes and reducing manual effort.</li>
-    <li>Built security automation platforms covering 15,000+ services and 4,000+
-      applications, automating container remediation, vulnerability detection and
-      validation pipelines, reducing remediation timelines from days to under one
-      hour.</li>
+      provisioning, giving 50+ teams self-service onboarding.</li>
+    <li>Developed an AWS FinOps module for multi-account cost analytics, anomaly
+      detection, forecasting and savings recommendations; automated GitLab migration and
+      CI/CD onboarding for 100+ repositories.</li>
   </ul>
 </div>
 
@@ -112,13 +187,12 @@
     <h3 class="entry__title">Software Engineering Intern &middot; Barclays</h3>
     <span class="entry__date">Jun 2024 &ndash; Jul 2024</span>
   </div>
-  <p class="entry__sub">Pune, Maharashtra &middot; Java, Spring Boot, Apache Ignite,
-  Thymeleaf, distributed systems</p>
+  <p class="entry__sub">Pune, India</p>
   <ul>
-    <li>Developed a full-stack cache monitoring platform using Spring Boot, Thymeleaf and
-      Apache Ignite to track SDS and ESM cache data across distributed systems.</li>
-    <li>Implemented anomaly detection and automated email alerts for cache fluctuations,
-      improving transaction monitoring and system reliability.</li>
+    <li>Built a full-stack cache monitoring platform (Spring Boot, Thymeleaf, Apache
+      Ignite) tracking SDS and ESM cache data across distributed systems, with anomaly
+      detection and automated email alerts on cache fluctuations; improved data retrieval
+      speed by 30%.</li>
   </ul>
 </div>
 
@@ -127,65 +201,62 @@
     <h3 class="entry__title">Hackathon Participant &middot; JPMorgan Chase</h3>
     <span class="entry__date">May 2024</span>
   </div>
-  <p class="entry__sub">Hyderabad, Telangana &middot; Java, Spring Boot, SQL, REST APIs</p>
+  <p class="entry__sub">Hyderabad, India</p>
   <ul>
-    <li>Developed a backend platform for NGO operations with CRUD APIs for donor
-      management, beneficiary tracking and fund distribution, improving SQL query
-      performance by 40%.</li>
-    <li>Integrated frontend and backend services with secure CORS handling for reliable
-      API communication.</li>
+    <li>Built a backend platform for NGO operations with CRUD APIs for donor management,
+      beneficiary tracking and fund distribution, improving SQL query performance by
+      40%.</li>
   </ul>
 </div>
 
 <h2>Skills</h2>
 
 <ul class="skills">
-  <li><strong>Languages &amp; version control</strong>: Java, Python, SQL, C++, C,
-    Bash, Linux, Git, GitHub, GitLab</li>
-  <li><strong>Frameworks &amp; libraries</strong>: Spring Boot, FastAPI, Django,
-    LangChain, CrewAI, Hugging Face, REST APIs, WebSockets</li>
-  <li><strong>AI &amp; agent systems</strong>: LLMs, generative AI, prompt
-    engineering, RAG, multi-agent systems, agent orchestration, transformers, AI
-    evaluation, model benchmarking, vector databases</li>
-  <li><strong>AI developer tools</strong>: GitHub Copilot, Cursor, Claude Code,
-    OpenAI Codex</li>
-  <li><strong>Databases &amp; infrastructure</strong>: MySQL, MongoDB, ChromaDB,
-    FAISS, Apache Ignite, Docker, Kubernetes, GitLab CI/CD, OpenTelemetry, distributed
-    systems, YAML, JSON</li>
-  <li><strong>Cloud &amp; deployment</strong>: AWS (Bedrock, SageMaker), LangSmith,
-    LangServe, microservices, event-driven architecture</li>
+  <li><strong>Languages &amp; core</strong>: Java, Python, C++, C, SQL, Bash, Linux, Git,
+    GitLab, Docker, Kubernetes, CI/CD</li>
+  <li><strong>AI &amp; research</strong>: LLMs, agent orchestration, RAG, multi-agent
+    systems, model benchmarking, AI evaluation, decision analysis, PyTorch, Hugging Face,
+    LangChain, LangGraph, CrewAI, vector databases</li>
+  <li><strong>Systems &amp; cloud</strong>: Spring Boot, FastAPI, Django, REST APIs,
+    Apache Ignite, Kafka, Spark, PostgreSQL, MongoDB, ChromaDB, FAISS, AWS (Bedrock,
+    SageMaker), OpenTelemetry, microservices, distributed systems</li>
+  <li><strong>Selected projects</strong>: C++ limit order book and matching engine
+    (~3M orders/sec); Python/C++ statistical backtesting framework; RAG document QA and
+    text-to-SQL agents. <a href="projects.html">More &rarr;</a></li>
 </ul>
 
 <h2>Publications</h2>
 
-<p>Four published or accepted papers, three arXiv preprints, and further work under
-review and in progress across multimodal benchmarking, agentic AI, scientific imaging,
-low-resource NLP and network security. See the full list on the
-<a href="publications.html">publications page</a> or on
+<p>Five published or accepted papers, three preprints, and further work under review and
+in progress across vision-language benchmarking, multi-adapter generative models, medical
+imaging, decision analysis, low-resource NLP and verifiable RL environments. See the
+<a href="publications.html">publications page</a> or
 <a href="https://scholar.google.com/citations?hl=en&amp;user=mszLYGcAAAAJ" rel="noopener">Google
 Scholar</a>.</p>
 
-<h2>Certifications &amp; achievements</h2>
+<h2>Service &amp; leadership</h2>
 
 <ul>
-  <li><strong>AWS Certified Cloud Practitioner</strong>: validating foundational
-    knowledge of AWS services, cloud concepts, security, pricing and architecture best
-    practices.</li>
-  <li><strong>Director's Recognition Award</strong>: for delivering agentic AI
-    systems that improved automation reliability and reduced user-prone errors across
-    internal workflows.</li>
-  <li><strong>Meta PyTorch OpenEnv Hackathon finalist</strong>: ranked among the
-    top 100 teams nationwide from 31,000+ registrations and 800+ finalist teams.</li>
+  <li><strong>Technical Committee Member, IEM-HEALS 2026</strong>: reviewed submissions
+    in health science and technology.</li>
+  <li><strong>Core Member, RPA Tech Club, KL University</strong> (2023&ndash;2025): ran
+    12 major events and 40 internal workshops, training 400+ students in robotic process
+    automation.</li>
 </ul>
 
-<h2>Academic service</h2>
+<h2>Certificates &amp; recognitions</h2>
 
 <ul>
-  <li><strong>Technical Committee Member, IEM-HEALS 2026</strong>: International
-    Conference on Advancing Science and Technologies in Health Science, supporting
-    research review activities.</li>
+  <li><strong>Google DeepMind APAC Research Symposium 2026</strong>: selected Student
+    Delegate, Bangalore, October 2026.</li>
+  <li><strong>Top 10, Class of 2025, KL University</strong>: top 10 of the Computer
+    Science and Engineering graduating class.</li>
+  <li><strong>Director's Recognition Award, Barclays</strong>: for improving automation
+    reliability and reducing human error.</li>
+  <li><strong>Meta PyTorch OpenEnv Hackathon Finalist</strong>: top 100 teams from
+    31,000+ registrations and 800+ finalist teams.</li>
+  <li><strong>AWS Certified</strong>: Solutions Architect; Cloud Practitioner.</li>
 </ul>
-
     </main>
   </div>
 </div>
