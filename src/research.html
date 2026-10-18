@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Research &middot; Yashwanth Devavarapu</title>
-<meta name="description" content="Research on multimodal benchmarking, agentic AI for scientific pipelines, medical imaging, low-resource NLP, and network intrusion detection.">
+<meta name="description" content="Research at Stanford (decision analysis and LLMs), Harvard Medical School/MGH (unpaired brain MRI generation), Carnegie Mellon (vision-language benchmarking, multi-LoRA composition) and KL University.">
 <meta name="author" content="Yashwanth Devavarapu">
-<meta property="og:title" content="Research &middot; Yashwanth Devavarapu">
-<meta property="og:description" content="Research on multimodal benchmarking, agentic AI for scientific pipelines, medical imaging, low-resource NLP, and network intrusion detection.">
+<meta property="og:title" content="Research">
+<meta property="og:description" content="Research at Stanford (decision analysis and LLMs), Harvard Medical School/MGH (unpaired brain MRI generation), Carnegie Mellon (vision-language benchmarking, multi-LoRA composition) and KL University.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/img/profile.jpeg">
 <link rel="icon" href="assets/img/profile.jpeg">
@@ -49,8 +49,8 @@
         <img class="avatar" src="assets/img/profile.jpeg"
              alt="Yashwanth Devavarapu" width="140" height="140">
         <h2 class="author__name">Yashwanth Devavarapu</h2>
-        <p class="author__bio">Software Engineer at Barclays. Research on benchmarking and
-          evaluation of multimodal models, agentic AI systems, and representation learning.</p>
+        <p class="author__bio">Software Engineer at Barclays. Research collaborator with
+          Stanford, Harvard Medical School / MGH and Carnegie Mellon.</p>
         <ul class="author__meta">
           <li><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0a5 5 0 0 0-5 5c0 3.5 5 11 5 11s5-7.5 5-11a5 5 0 0 0-5-5zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg><span>Pune, India</span></li>
           <li><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 1 1 5v1h14V5L8 1zM3 7v5H2v2h12v-2h-1V7h-2v5H9V7H7v5H5V7H3z"/></svg><span>Barclays</span></li>
@@ -63,153 +63,96 @@
         </ul>
       </aside>
     <main class="content" id="main">
-
 <h1>Research</h1>
 
-<p class="lead">My work sits at the intersection of evaluation and autonomy: building
-the benchmarks that reveal what models cannot do, and building agents that take over
-decision-making in domains where expertise, not compute, is the bottleneck.</p>
+<p class="lead">I work on evaluation and generation: building the measurements that show
+what models actually do, and the generative systems that have to survive those
+measurements. Most of it happens through collaborations at Stanford, Harvard Medical
+School and Carnegie Mellon.</p>
 
-<p>The five areas below describe the threads running through my
-<a href="publications.html">publications</a>. Several papers appear under more than one
-heading.</p>
+<h2 id="stanford">Stanford University, Management Science &amp; Engineering</h2>
 
-<h2 id="benchmarking">Benchmarking &amp; evaluation of multimodal models</h2>
+<p class="entry__sub">Research Collaborator with Prof. Ross Shachter &middot; Jun 2026
+&rarr; present</p>
 
-<p>Aggregate leaderboard scores hide the failures that matter. I build diagnostic
-benchmarks aimed at a specific, nameable deficiency, then characterise how and why
-models fail on it.</p>
+<p>Decision analysis is an unusually clean domain in which to test whether language
+models can act autonomously: the influence-diagram representation is formal, the
+pedagogy is well established, and the correct answer to every question is known exactly,
+in closed form, before any model is queried.</p>
 
-<p><strong>Reflection blindness.</strong> In
-<a href="publications.html#looking-glass">Through the Looking Glass</a> we show that
-vision-language models systematically hallucinate the canonical orientation of mirrored
-content rather than reasoning about the reflection. The benchmark covers 713 real-world
-images and 3,529 QA pairs across 10 scenario categories (licence plates in
-rear-view mirrors, analog clocks, hands, ears, shoes, chemical formulas, ambulance
-mirror-text, selfie cameras, water reflections, indoor mirrors) organised into
-five question types. All 11 evaluated models land at 39&ndash;48% against 94% for
-humans, and performance collapses hardest on mental un-flipping of text and left&ndash;right
-chirality judgment. Multi-turn dialogue degrades most models by 1&ndash;14 points.</p>
+<p><strong>The measurement artifact.</strong> I designed experiments testing whether LLMs
+can execute decision analysis, and found that the order of fields in the response format
+alone changes the answer. Asking for the numeric answer before the free-text reasoning
+produced $60, $70, $82.35 and $67.50 across conditions; asking for reasoning first
+produced a stable $76.00. This is not a capability gap but a property of how the output
+is elicited, and it affects how LLM reasoning is evaluated well beyond this domain.</p>
 
-<p><strong>Video embeddings.</strong> <a href="publications.html#mveb">MVEB</a> is a
-23-task benchmark derived from a 184-task pool, designed to preserve task diversity
-while cutting evaluation cost. Evaluating 33 models shows no single winner: MLLM-based
-embeddings lead on classification, clustering, pair classification and QA; multimodal
-binding leads on retrieval and zero-shot classification; generative MLLMs without
-contrastive adaptation collapse on cross-modal tasks. A paired video-only versus
-audio+video evaluation isolates a provenance effect: audio helps when labels were
-produced from both modalities and hurts when they came from visuals alone.</p>
+<p><strong>Where the arithmetic should live.</strong> I built a code-generation setup in
+which models solved decision problems exactly, 128 of 128, in cases where
+in-context reasoning failed outright. Error feedback lifts GPT-4o from 10.2 to 23.0 out
+of 29 tests, a real improvement that never reaches perfection. The architectural
+conclusion: models should supply genuinely uncertain judgments, and code should perform
+any numerically sensitive computation.</p>
 
-<p><strong>Reasoning under known ground truth.</strong>
-<a href="publications.html#decision-analysis">Can Large Language Models Autonomously
-Perform Decision Analysis?</a> uses the Oil Wildcatter influence diagram, where every
-correct answer is known in closed form before any model is queried. Across 128+ live
-conditions and several hundred API calls we find a graded answer: single-step
-computations are reliable once a structured-output defect is corrected; multi-step
-integration degrades sharply through several independently diagnosed mechanisms; and
-certainty-equivalent inversion under CRRA utility near its asymptotic limit is
-genuinely ill-conditioned, unfixable by any prompting strategy.</p>
+<h2 id="harvard">Harvard Medical School / Massachusetts General Hospital</h2>
 
-<p><strong>Edge deployment.</strong>
-<a href="publications.html#edgemedbench">EdgeMedBench</a> evaluates 45 configurations
-across five small language models and three quantization levels for medical question
-answering under edge constraints.</p>
+<p class="entry__sub">Research Collaborator with Dr. Xiangrui (Taylor) Zeng &middot; Apr
+2026 &rarr; present</p>
 
-<h2 id="agentic">Agentic AI &amp; autonomous systems</h2>
+<p>I lead a team generating patient-specific 3D brain MRI volumes without paired training
+data, using diffusion models in PyTorch.</p>
 
-<p>Existing systems automate scientific <em>pipelines</em> but not the <em>decision
-process</em>: they rely on fixed thresholds, retry identical recipes on failure, and
-offer no evaluable model of the choices being made. My work here formalises those
-decisions and makes them auditable.</p>
+<p><strong>Setting the direction.</strong> I hypothesised that gradient guidance would
+fail precisely where adapter conditioning succeeds, and designed an oracle experiment to
+test it rather than argue it.</p>
 
-<p><a href="publications.html#cryoemagent">CryoEMAgent</a> formalises single-particle
-analysis as a Markov Decision Process and contributes an adaptive particle-selection
-algorithm with a provable keep-best safety guarantee, a domain-grounded reflection
-method built on a causal failure graph, the first benchmark for LLM reasoning on
-cryo-EM processing decisions, and a visual-grounding audit testing whether
-vision-language critics actually see the images or merely read the metrics.</p>
+<p><strong>Chasing the blur.</strong> Residual blur in the generated volumes traced back
+to conditional-mean averaging over plausible anatomies. I localised it to high-frequency
+wavelet subbands and designed a wavelet-domain loss that measurably improved sharpness.
+I also built the ADNI data pipeline and the nnUNet-based segmentation evaluation
+pipeline, and generated all second-phase results.</p>
 
-<p><a href="publications.html#astral">Astral</a> detects video anomalies by reasoning
-about <em>procedural</em> rather than <em>statistical</em> normality. Given only a
-plain-language Standard Operating Procedure and a clip, three agents compile a Canonical
-Normal World Model encoding expected entities, states, protocol steps and Linear
-Temporal Logic safety rules, then detect deviations with no dataset-specific training.
-It reaches 100% on LiquidAD, 90.9% (F1&nbsp;=&nbsp;0.945) on IPAD, and 60.0% with zero
-false positives on a PhysAD sample.</p>
+<h2 id="cmu">Carnegie Mellon University, Prof. Min Xu's Lab</h2>
 
-<p><a href="publications.html#trace">TRACE</a> and
-<a href="publications.html#apishift">APISHIFT</a> build verifiable reinforcement learning
-environments for network troubleshooting agents and API contract migration: settings where an agent's action can be checked against ground truth rather than scored
-by a model.</p>
+<p class="entry__sub">Research Collaborator &middot; Jan 2026 &rarr; present</p>
 
-<p><a href="publications.html#scene-rep">Scene Representations for Robotics</a> surveys
-over 130 methods across dense SLAM, navigation, manipulation, semantic reasoning and
-physics-informed modelling, tracing the path from occupancy grids and TSDFs through
-NeRF to 4D semantic Gaussian splatting.</p>
+<p><strong><a href="publications.html#mira">MIRA</a></strong> (advisor: Yunbei Zhang).
+Vision-language models systematically hallucinate the canonical orientation of mirrored
+content instead of reasoning about the reflection. The benchmark covers 713 real images
+and 3,529 question-answer pairs across 10 scenarios, from licence plates in rear-view
+mirrors to analog clocks, chemical formulas and ambulance mirror-text. I evaluated 11
+frontier models: all land at 39&ndash;48% against 94% for humans, and multi-turn dialogue
+degrades most of them rather than helping. Accepted at a CVPR 2026 workshop.</p>
 
-<h2 id="imaging">Medical &amp; scientific imaging</h2>
+<p><strong><a href="publications.html#srlora">SR-LoRA / CLAC</a></strong> (with Xingjian
+Li). I built and ran the 480-compositions-per-method GPU benchmark on Stable Diffusion v1.5 (rank-4 LoRAs, DPM-Solver++, CLIP ViT-L/14) along with the
+&tau;/&alpha;/&delta; and N=3 ablations. Extending from three seeds to ten showed our own
+text-alignment gain was 4.3%, not the 6.8% the smaller run reported. CLAC raises identity
+consistency from 0.839 to 0.915, 7.6 points over the strongest baseline. Submitted to
+ICLR 2027.</p>
 
-<p><strong>Conditional MRI generation</strong>: my main ongoing project, an
-unpaired diffusion model for conditional generation of MRI scans from segmentation maps,
-in collaboration with <strong>Harvard Medical School</strong>. Expected duration one
-year.</p>
+<p><strong><a href="publications.html#trace">TRACE</a> and
+<a href="publications.html#apishift">APISHIFT</a></strong>. Verifiable reinforcement
+learning environments for network troubleshooting agents and API contract migration. I
+contributed to environment design, verification logic, and reward mechanisms that score
+an agent's actions against ground truth rather than relying on a judge model: the distinction that makes the reward signal trustworthy enough to train against.</p>
 
-<p><a href="publications.html#cryo-agent">CRYO-AGENT</a> addresses the two fundamental
-limits of cryo-electron tomography: low signal-to-noise ratio and the missing
-wedge artifact, which induces anisotropic distortions and structural hallucinations that
-feed-forward denoisers never validate. It reframes 3D reconstruction as an autonomous
-scientific discovery loop: a Planner&ndash;Executor&ndash;Critic workflow where the
-Executor uses Retrieval-Augmented Cyclic Diffusion to inject high-fidelity atomic priors
-from the Protein Data Bank directly into reconstruction, and a Critic agent backed by a
-differentiable physics simulator enforces adherence to the physical data.</p>
+<h2 id="kl">KL University</h2>
 
-<p><a href="publications.html#edgemedbench">EdgeMedBench</a> covers medical question
-answering under the memory and latency budgets of edge hardware.</p>
+<p class="entry__sub">Undergraduate Research Assistant with Dr. K. Ashesh &middot; Aug
+2022 &rarr; Mar 2025</p>
 
-<h2 id="lowresource">Low-resource language representation</h2>
-
-<p>Kinyarwanda is a morphologically rich Bantu language spoken by over 12 million people
-in Rwanda, and is severely under-represented in the pre-training corpora behind models
-such as LaBSE, mE5&#8209;large and OpenAI text&#8209;embedding&#8209;3&#8209;large.</p>
-
-<p><a href="publications.html#kinyaembed">KinyaEmbed</a> is the first dedicated sentence
-embedding model for the language, built on KinyaBERT&#8209;large and trained through a
-four-stage curriculum using MultipleNegativesRankingLoss: paraphrase pairs from the
-Official Gazette of Rwanda, NLLB-translated MNLI triplets for entailment structure,
-English&ndash;Kinyarwanda OPUS&#8209;100 alignment, and a final refinement on pairs
-filtered from KinyaCOMET. It also introduces Wiki&#8209;RW&#8209;STS, a contamination-free
-Kinyarwanda STS benchmark.</p>
-
-<p><a href="publications.html#tabulm">TabuLM</a> is the first language model pre-trained
-on Kinyarwanda tabular data, extending KinyaBERT&#8209;large with row, column and
-cell-type embeddings and a learned table-structure attention bias. Two new objectives, Masked Cell Recovery and Column Type Prediction, are pre-trained on 172
-Rwandan government tables from NISR, RAB, REB and MoH open-data portals. It ships with
-TabQA&#8209;kin, the first native Kinyarwanda table question-answering benchmark.</p>
-
-<h2 id="security">Network security &amp; intrusion detection</h2>
-
-<p>Software-defined networking concentrates decision logic in a centralised controller,
-creating a high-value attack surface vulnerable to both volumetric flooding and
-control-plane exhaustion.</p>
-
-<p><a href="publications.html#sdn-ddos">ML-Based SDN DDoS Detection</a> compares Random
-Forest, XGBoost, artificial neural networks and decision trees on CICIDS&#8209;2017,
-detecting brute force, DoS, DDoS, probe and user-to-root attacks using only features
-already available at the controller, with no deep packet inspection.</p>
-
-<p><a href="publications.html#adaptive-ids">Adaptive Semi-Supervised Intrusion
-Detection</a> targets the gap left by fully supervised, binary-class IDS work: limited
-labelled data and severe class imbalance. A hybrid Autoencoder&nbsp;+&nbsp;Gradient
-Boosting model trains the autoencoder only on benign traffic, then fuses
-reconstruction-error anomaly cues with tabular flow features. Benchmarked against ten
-alternatives under a leakage-safe protocol it reaches accuracy 0.991,
-Macro&#8209;F1 0.964, rare-class recall 0.941 and rare-class precision 0.896.</p>
-
-<p><a href="publications.html#fraud">Credit Card Fraud Detection Using Outlier Analysis
-and Detection</a> applies statistical and machine learning outlier detection to
-transaction amount, location, time and user behaviour, aiming to raise detection
+<p>First-authored <a href="publications.html#fraud">an IEEE CONIT 2024 paper</a> applying
+outlier analysis to credit card fraud detection, using statistical and machine learning
+methods over transaction amount, location, time and user behaviour to raise detection
 accuracy while holding down false positives.</p>
 
+<h2 id="systems">Low-latency systems</h2>
+
+<p>Outside the collaborations, I work on execution systems: a C++ limit order book and
+matching engine running at roughly 3M orders per second, and
+<a href="publications.html#orderbook">a reproducible, cross-platform study</a> of the
+order-book data structures underneath it.</p>
     </main>
   </div>
 </div>

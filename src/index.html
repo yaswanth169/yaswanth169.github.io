@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yashwanth Devavarapu</title>
-<meta name="description" content="Software Engineer at Barclays researching benchmarking and evaluation of multimodal models, agentic AI systems, and representation learning.">
+<meta name="description" content="Software Engineer at Barclays and research collaborator with Stanford, Harvard Medical School/MGH and Carnegie Mellon, working on model evaluation, medical image generation and generative models.">
 <meta name="author" content="Yashwanth Devavarapu">
 <meta property="og:title" content="Yashwanth Devavarapu">
-<meta property="og:description" content="Software Engineer at Barclays researching benchmarking and evaluation of multimodal models, agentic AI systems, and representation learning.">
+<meta property="og:description" content="Software Engineer at Barclays and research collaborator with Stanford, Harvard Medical School/MGH and Carnegie Mellon, working on model evaluation, medical image generation and generative models.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/img/profile.jpeg">
 <link rel="icon" href="assets/img/profile.jpeg">
@@ -49,8 +49,8 @@
         <img class="avatar" src="assets/img/profile.jpeg"
              alt="Yashwanth Devavarapu" width="140" height="140">
         <h2 class="author__name">Yashwanth Devavarapu</h2>
-        <p class="author__bio">Software Engineer at Barclays. Research on benchmarking and
-          evaluation of multimodal models, agentic AI systems, and representation learning.</p>
+        <p class="author__bio">Software Engineer at Barclays. Research collaborator with
+          Stanford, Harvard Medical School / MGH and Carnegie Mellon.</p>
         <ul class="author__meta">
           <li><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0a5 5 0 0 0-5 5c0 3.5 5 11 5 11s5-7.5 5-11a5 5 0 0 0-5-5zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg><span>Pune, India</span></li>
           <li><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 1 1 5v1h14V5L8 1zM3 7v5H2v2h12v-2h-1V7h-2v5H9V7H7v5H5V7H3z"/></svg><span>Barclays</span></li>
@@ -63,98 +63,110 @@
         </ul>
       </aside>
     <main class="content" id="main">
-
-<h1>Software engineer at Barclays, researching how multimodal and agentic AI
-systems are actually evaluated</h1>
+<h1>Software engineer at Barclays, researching how language and vision models
+behave when you measure them carefully</h1>
 
 <p class="lead">I build production AI and developer-platform systems at Barclays in
-Pune, India, and run a parallel research programme on evaluation: benchmarks that
-surface failure modes current models hide, and agentic pipelines for scientific
-domains where the hard part is the sequence of expert <em>decisions</em>, not the
-computation.</p>
+Pune, and work as a research collaborator with
+<a href="research.html#stanford">Stanford</a>,
+<a href="research.html#harvard">Harvard Medical School / MGH</a> and
+<a href="research.html#cmu">Carnegie Mellon</a> on evaluation, medical image
+generation and multi-adapter generative models.</p>
 
-<p>Most benchmarks reward models for what they already do well. The work I find
-interesting goes the other way: construct the evaluation that breaks the model, then
-explain why it broke. That thread runs through a mirror-reasoning benchmark on which
-frontier vision-language models score 42&ndash;44% against 94% for humans, a 23-task
-video embedding benchmark where no single model dominates any task family, and a study
-showing that large language models cannot reliably execute a decision-analysis problem
-taught to undergraduates.</p>
+<p>A thread runs through most of what I do: the measurement is usually the problem.
+At Stanford I found that the <em>order of fields in a model's response</em> changes its
+answer to a decision-analysis problem, turning four different numbers into one stable
+one. At CMU, extending a benchmark from three seeds to ten cut our own reported gain from 6.8% to 4.3%. Frontier vision-language models score 39&ndash;48% on mirror
+reasoning where humans score 94%. None of those are results you get without building
+the evaluation first.</p>
 
-<p>Alongside that, I work on agentic systems for scientific instruments (cryo-EM and cryo-ET reconstruction pipelines that run end to end without human
-checkpoints) and on representation learning for Kinyarwanda, a Bantu language
-spoken by over 12 million people and largely absent from multilingual pre-training
-corpora.</p>
+<p>Alongside that I lead a team at Harvard Medical School and MGH generating
+patient-specific 3D brain MRI volumes without paired data, and work on low-latency
+systems: a C++ matching engine running around 3M orders per second, and a reproducible
+study of the order-book data structures underneath it.</p>
 
-<h2>Research focus</h2>
+<h2>Positions</h2>
 
-<ul>
-  <li><strong><a href="research.html#benchmarking">Benchmarking &amp; evaluation of
-    multimodal models</a></strong>: diagnostic benchmarks for vision-language
-    models, video embeddings, and small language models under deployment constraints.</li>
-  <li><strong><a href="research.html#agentic">Agentic AI &amp; autonomous
-    systems</a></strong>: LLM-driven operators for scientific pipelines,
-    verifiable RL environments for software engineering agents, and training-free
-    anomaly detection via symbolic world models.</li>
-  <li><strong><a href="research.html#imaging">Medical &amp; scientific
-    imaging</a></strong>: diffusion models for conditional MRI generation,
-    cryo-EM and cryo-ET reconstruction, and medical question answering at the edge.</li>
-  <li><strong><a href="research.html#lowresource">Low-resource language
-    representation</a></strong>: sentence embeddings and tabular pre-training
-    for Kinyarwanda.</li>
-  <li><strong><a href="research.html#security">Network security &amp; intrusion
-    detection</a></strong>: machine learning for SDN intrusion detection and
-    financial fraud anomaly detection.</li>
-</ul>
+<div class="entry">
+  <div class="entry__head">
+    <h3 class="entry__title"><a href="research.html#stanford">Stanford University</a>,
+      Management Science &amp; Engineering</h3>
+    <span class="entry__date">Jun 2026 &rarr; present</span>
+  </div>
+  <p class="entry__sub">Research Collaborator with Prof. Ross Shachter</p>
+  <p>Whether large language models can autonomously execute decision analysis, and what
+  breaks when they cannot.</p>
+</div>
+
+<div class="entry">
+  <div class="entry__head">
+    <h3 class="entry__title"><a href="research.html#harvard">Harvard Medical School /
+      Massachusetts General Hospital</a></h3>
+    <span class="entry__date">Apr 2026 &rarr; present</span>
+  </div>
+  <p class="entry__sub">Research Collaborator with Dr. Xiangrui (Taylor) Zeng</p>
+  <p>Leading a team generating patient-specific 3D brain MRI volumes from unpaired data
+  with diffusion models.</p>
+</div>
+
+<div class="entry">
+  <div class="entry__head">
+    <h3 class="entry__title"><a href="research.html#cmu">Carnegie Mellon University</a>,
+      Prof. Min Xu's Lab</h3>
+    <span class="entry__date">Jan 2026 &rarr; present</span>
+  </div>
+  <p class="entry__sub">Research Collaborator</p>
+  <p>Benchmarking vision-language models, multi-LoRA composition, and verifiable
+  reinforcement learning environments for software agents.</p>
+</div>
 
 <h2>Selected work</h2>
 
-<h3><a href="publications.html#looking-glass">Through the Looking Glass</a>
-  <span class="tag">CVPR Workshop 2026</span></h3>
+<h3><a href="publications.html#mira">MIRA: mirror reasoning in vision-language
+  models</a> <span class="tag">CVPR Workshop 2026</span></h3>
 <p>When a clock reads 2:50 in a mirror, humans instantly infer 9:10. Vision-language
 models report &ldquo;2:50.&rdquo; We name this <em>reflection blindness</em> and build
-the first benchmark to diagnose it: 713 real-world images, 3,529 QA pairs, 10 scenario
-categories. Across 11 models, accuracy sits at 39&ndash;48% against 94% for humans. GPT&#8209;5.2, Gemini&nbsp;2.5&nbsp;Flash and Claude&nbsp;4.5&nbsp;Sonnet all
-cluster at 42&ndash;44%. Multi-turn dialogue makes most models <em>worse</em>.</p>
+the first benchmark to diagnose it: 713 real images, 3,529 QA pairs, 10 scenarios.
+Across 11 frontier models accuracy sits at 39&ndash;48% against 94% for humans, and
+multi-turn dialogue makes most of them worse.</p>
+
+<h3><a href="research.html#stanford">Response-field order changes the answer</a>
+  <span class="tag">Stanford</span></h3>
+<p>Asking a model to state its answer before its reasoning produced $60, $70, $82.35 and
+$67.50 on the same problem. Reasoning-first produced a stable $76.00. A measurement
+artifact, not a capability gap, and one that affects how LLM reasoning gets evaluated
+generally. Moving the arithmetic into generated code solved all 128 of 128 cases that
+in-context reasoning failed.</p>
+
+<h3><a href="publications.html#srlora">SR-LoRA / CLAC: multi-LoRA composition</a>
+  <span class="tag">ICLR 2027 submission</span></h3>
+<p>A 480-composition-per-method GPU benchmark on Stable Diffusion v1.5. The ten-seed run
+showed our text-alignment gain was 4.3%, not the 6.8% three seeds suggested, and
+CLAC raises identity consistency from 0.839 to 0.915 over the strongest baseline.</p>
 
 <h3><a href="publications.html#mveb">MVEB: Massive Video Embedding Benchmark</a>
-  <span class="tag">arXiv 2026</span></h3>
-<p>A 23-task benchmark for video embeddings spanning classification, clustering,
-retrieval and video-centric QA, distilled from a 184-task pool. Across 33 models no
-single approach dominates, and audio's contribution turns out to depend on how the
-labels were annotated, a six-point gap consistent across model families.
-Integrated into the MTEB ecosystem.</p>
-
-<h3><a href="publications.html#cryoemagent">CryoEMAgent</a>
-  <span class="tag">In progress</span></h3>
-<p>An LLM-driven autonomous operator that runs a complete cryo-EM single-particle
-analysis pipeline in CryoSPARC over an MCP-over-SSH bridge, with no human checkpoints.
-It reconstructs a 3.21&#8201;&#197; near-atomic structure of a G-protein-coupled receptor
-from the full EMPIAR&#8209;10288 dataset (2,756 movies, 477&#8239;GB) with zero
-human intervention.</p>
-
-<h3><a href="publications.html#kinyaembed">KinyaEmbed</a>
-  <span class="tag">arXiv 2026</span></h3>
-<p>The first dedicated sentence embedding model for Kinyarwanda, trained through a
-four-stage curriculum. It reaches Spearman &rho;&nbsp;=&nbsp;0.7298 on SemRel2024&#8209;rw,
-surpassing mE5&#8209;large by 20.9% and OpenAI text&#8209;embedding&#8209;3&#8209;large by
-41.0%.</p>
+  <span class="tag">EMNLP 2026</span></h3>
+<p>A 23-task benchmark for video embeddings distilled from a 184-task pool. Across 33
+models no single approach dominates, and audio's contribution turns out to depend on how
+the labels were annotated: a six-point gap consistent across model families.</p>
 
 <h2>News</h2>
 
 <ul>
-  <li><strong>2026</strong>: &ldquo;Through the Looking Glass&rdquo; accepted at
-    a CVPR 2026 workshop.</li>
-  <li><strong>2026</strong>: Selected as Technical Committee Member for
-    IEM&#8209;HEALS 2026, the International Conference on Advancing Science and
-    Technologies in Health Science.</li>
-  <li><strong>2026</strong>: MVEB, TabuLM and KinyaEmbed released on arXiv.</li>
-  <li><strong>2026</strong>: Finalist at the Meta PyTorch OpenEnv Hackathon:
-    top 100 teams nationwide from 31,000+ registrations.</li>
-  <li><strong>Jul 2025</strong>: Joined Barclays, Pune as a Software
-    Engineer.</li>
+  <li><strong>Oct 2026</strong>: Selected Student Delegate, Google DeepMind APAC Research
+    Symposium 2026, Bangalore.</li>
+  <li><strong>Jun 2026</strong>: Began collaborating with Prof. Ross Shachter at Stanford
+    MS&amp;E on decision analysis and LLMs.</li>
+  <li><strong>Apr 2026</strong>: Began leading the unpaired brain-MRI generation project
+    at Harvard Medical School and MGH.</li>
+  <li><strong>2026</strong>: MIRA accepted at a CVPR 2026 workshop; MVEB accepted at
+    EMNLP 2026.</li>
+  <li><strong>Jan 2026</strong>: Joined Prof. Min Xu's lab at Carnegie Mellon as a
+    research collaborator.</li>
+  <li><strong>2026</strong>: Finalist at the Meta PyTorch OpenEnv Hackathon, top 100
+    teams from 31,000+ registrations.</li>
+  <li><strong>Jul 2025</strong>: Joined Barclays, Pune as a Software Engineer.</li>
 </ul>
-
     </main>
   </div>
 </div>
